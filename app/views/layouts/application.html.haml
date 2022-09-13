@@ -2,11 +2,17 @@
 %html
   %head
     %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
-    %title AdminLionNav
+    %title= @page_title || 'Admin | LionNav'
     %meta{:content => "width=device-width,initial-scale=1", :name => "viewport"}/
+    // = favicon_link_tag ('favicon.ico')
+    = stylesheet_link_tag "application", media: "all", "data-turbo-track": "reload"
+    = javascript_importmap_tags
     = csrf_meta_tags
     = csp_meta_tag
-    = stylesheet_link_tag "application", "data-turbo-track": "reload"
-    = javascript_importmap_tags
   %body
-    = yield
+    = render "layouts/topbar"
+    = render "layouts/flashmessage"
+    %br/
+    .grid-container
+      .mobile-padding
+        = yield
