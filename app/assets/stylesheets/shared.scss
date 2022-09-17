@@ -14,6 +14,14 @@ html body{
   width: 40px;
 }
 
+a {
+  color: #5e5e5e;
+}
+
+a:hover {
+  color: #3b3b3b;
+}
+
 .text-padding-home-icon {
   padding-top: 18%;
 }
@@ -25,12 +33,12 @@ html body{
   padding-right: 10%;
 }
 
-.text-padding-personal-icon {
-  padding-top: 7%;
+.text-padding-cross-icon {
+  padding-top: 9%;
 }
 
-.text-padding-data-icon {
-  padding-top: 6%;
+.text-padding-crosses-icon {
+  padding-top: 7%;
 }
 
 .callout.info {
