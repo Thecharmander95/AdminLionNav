@@ -1,0 +1,19 @@
+.grid-x
+  .medium-3.cell
+    = render "buttons/cross"
+  .medium-9.cell
+    %h2 Changing #{@user.username}'s role
+    = form_for @user do |f|
+      - if f.object.errors.any?
+        #error_explanation
+          %h2= "#{pluralize(f.object.errors.count, "error")} prohibited this post from being saved:"
+          %ul
+            - f.object.errors.full_messages.each do |message|
+              %li= message
+      .field
+        = f.label :Role
+        = f.text_field :role
+      .actions
+        = f.submit "Update", class:"button"
+  
+  
