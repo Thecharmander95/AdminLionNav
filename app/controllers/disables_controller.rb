@@ -21,10 +21,10 @@ class DisablesController < ApplicationController
   def update
     if @disable.update(disable_params)
      flash[:notice] = "Disable feature was updated"
-     redirect_to disables_path
+     redirect_to disablecontrol_path
     else
      flash[:notice] = "Disable feature was not updated"
-     render 'edit'
+      redirect_to disablecontrol_path
     end
   end
 
@@ -43,6 +43,6 @@ class DisablesController < ApplicationController
 
   private
     def disable_params
-      params.require(:disable).permit(:homedisable, :postdisable, :conversationdisable, :userdisable, :movie, :scene, :credit, :error, :expense, :forums, :lsabout, :payment, :picturescenering, :lionsocial, :lionfianace, :moviemaker, :tutorial, :myaccont, )
+      params.require(:disable).permit(:homedisable, :postdisable, :conversationdisable, :userdisable, :movie, :scene, :credit, :error, :expense, :forums, :lsabout, :payment, :picturescene, :lionsocial, :lionfianace, :moviemaker, :tutorial, :myaccont )
     end
 end

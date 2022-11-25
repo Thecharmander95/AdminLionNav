@@ -1,0 +1,83 @@
+.grid-x
+  .medium-3.cell
+    = render "buttons/cross"
+  .medium-9.cell
+    .center
+      %h2 Disable Settings
+      %h4 Control what features you can disable
+    = form_for @disable do |f|
+      .grid-x
+        .medium-3.cell.space
+          %p
+            = f.label :Disable_LionNav
+            = f.text_field :homedisable
+        .medium-3.cell.space
+          %p
+            = f.label :Disable_Posts
+            = f.text_field :postdisable
+        .medium-3.cell.space
+          %p
+            = f.label :Disable_conversations
+            = f.text_field :conversationdisable
+        .medium-3.cell.space
+          %p
+            = f.label :Disable_users
+            = f.text_field :userdisable
+        .medium-3.cell.space
+          %p
+            = f.label :Disable_Movies
+            = f.text_field :movie
+        .medium-3.cell.space
+          %p
+            = f.label :Disable_scenes
+            = f.text_field :scene
+        .medium-3.cell.space
+          %p
+            = f.label :Disable_credits
+            = f.text_field :credit
+        .medium-3.cell.space
+          %p
+            = f.label :Disable_errors
+            = f.text_field :error
+        .medium-3.cell.space
+          %p
+            = f.label :Disable_expenses
+            = f.text_field :expense
+        .medium-3.cell.space
+          %p
+            = f.label :Disable_forums
+            = f.text_field :forums
+        .medium-3.cell.space
+          %p
+            = f.label :Disable_LionSocial_Abouts
+            = f.text_field :lsabout
+        .medium-3.cell.space
+          %p
+            = f.label :Disable_payments
+            = f.text_field :payment
+        .medium-3.cell.space
+          %p
+            = f.label :Disable_picturescenes
+            = f.text_field :picturescene
+        .medium-3.cell.space
+          %p
+            = f.label :Disable_Lion_Social
+            = f.text_field :lionsocial
+        .medium-3.cell.space
+          %p
+            = f.label :Disable_Lion_Fianace
+            = f.text_field :lionfianace
+        .medium-3.cell.space
+          %p
+            = f.label :Disable_Movie_Makers
+            = f.text_field :moviemaker
+        .medium-3.cell.space
+          %p
+            = f.label :Disable_Rails_Tutorial
+            = f.text_field :tutorial
+        .medium-3.cell.space
+          %p
+            = f.label :Disable_My_Accont
+            = f.text_field :myaccont
+      = f.submit class: "button"
+      = link_to "Back", cross_path, class: "button"

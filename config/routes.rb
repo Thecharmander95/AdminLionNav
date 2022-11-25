@@ -7,6 +7,7 @@ Rails.application.routes.draw do
 
   # Resources
   resources :users
+  resources :disables
 
   # Admin Pages
   get :lionsocial, 'admins/lionsocial'
@@ -17,5 +18,6 @@ Rails.application.routes.draw do
 
   # Controls
   get :usercontrol, 'controls/user'
+  get :disablecontrol, 'controls/disable'
 
 end
