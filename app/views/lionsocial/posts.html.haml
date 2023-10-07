@@ -1,0 +1,30 @@
+.grid-x
+  .medium-3.cell
+    = render "buttons/lionsocial"
+  .medium-9.cell
+    .center
+      %h2 Post Settings
+      %h4 See what posts are appropriate and remove ones that are innapropiate
+    %table
+      %thead
+        %tr
+          %th Id
+          %th Who Posted?
+          %th Text
+          %th Has Image?
+          %th Remove
+
+      %tbody
+        - @posts.each do |post|
+          %tr
+            %td= post.id
+            %td= post.user.username
+            %td= post.content
+            %td
+              - if post.picture.attached?
+                yes
+              - else 
+                no
+            %td= link_to 'Delete', post ,data: { "turbo-method": :delete, turbo_confirm: 'Are you sure?' }
+
+    = link_to "Back", lionsocial_path, class: "button"

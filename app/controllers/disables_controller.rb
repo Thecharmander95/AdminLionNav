@@ -21,10 +21,10 @@ class DisablesController < ApplicationController
   def update
     if @disable.update(disable_params)
      flash[:notice] = "Disable feature was updated"
-     redirect_to disablecontrol_path
+     redirect_to root_path
     else
      flash[:notice] = "Disable feature was not updated"
-      redirect_to disablecontrol_path
+      redirect_to root_path
     end
   end
 

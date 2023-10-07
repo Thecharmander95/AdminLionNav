@@ -1,0 +1,28 @@
+.grid-x
+  .medium-3.cell
+    = render "buttons/lionsocial"
+  .medium-9.cell
+    .center
+      %h2 Disable Settings
+      %h4 Control what features you can disable
+    = form_for @disable do |f|
+      .grid-x
+        .medium-3.cell.space
+          %p
+            = f.label :Disable_Posts
+            = f.text_field :postdisable
+        .medium-3.cell.space
+          %p
+            = f.label :Disable_conversations
+            = f.text_field :conversationdisable
+        .medium-3.cell.space
+          %p
+            = f.label :Disable_Abouts
+            = f.text_field :lsabout
+        .medium-3.cell.space
+          %p
+            = f.label :Disable_Lion_Social
+            = f.text_field :lionsocial
+
+      = f.submit "Update Disables", class: "button"
+      = link_to "Back", lionsocial_path, class: "button"

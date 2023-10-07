@@ -1,0 +1,26 @@
+.grid-x
+  .medium-3.cell
+    = render "buttons/lionsocial"
+  .medium-9.cell
+    .center
+      %h2 Comment Settings
+      %h4 See what comments are appropriate and remove ones that are innapropiate
+    %table
+      %thead
+        %tr
+          %th Id
+          %th Post ID
+          %th Who Commented?
+          %th Text
+          %th Remove
+
+      %tbody
+        - @comments.each do |comment|
+          %tr
+            %td= comment.id
+            %td= comment.post.id
+            %td= comment.user.username
+            %td= comment.body
+            %td= link_to 'Delete', [comment.post, comment] ,data: { "turbo-method": :delete, turbo_confirm: 'Are you sure?' }
+
+    = link_to "Back", lionsocial_path, class: "button"

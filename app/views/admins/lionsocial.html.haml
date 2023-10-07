@@ -11,5 +11,28 @@
           .center
             %h4 Disable
             %p Shows all disbale options for Lion Social.
-            = link_to "Open", disablecontrol_path, class: "button"
-    
+            = link_to "Open", lionsocialdisable_path, class: "button"
+      .medium-4.cell
+        .callout.info 
+          .center
+            %h4 Anncouments
+            %p Create, edit, and delete all anncouments on Lion Social.
+            = link_to "Open", lionsocialannocments_path, class: "button"
+      .medium-4.cell 
+        .callout.info
+          .center 
+            %h4 Posts
+            %p View all the posts that may be too bad to keep up.
+            = link_to "Open", lionposts_path, class: "button"
+      .medium-4.cell 
+        .callout.info
+          .center 
+            %h4 Comments
+            %p View all the comments that may be too bad to keep up.
+            = link_to "Open", comments_path, class: "button"
+      .medium-4.cell 
+        .callout.info
+          .center 
+            %h4 About
+            %p Edit the about page for Lion Social to have it up to date.
+            = link_to "Open", lionsocialabout_path, class: "button"

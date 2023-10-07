@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'lionsocial/disables'
+  get 'lionsocial/posts'
+  get 'lionsocial/annocments'
+  get 'lionsocial/messages'
   root 'homes#index'
   
   devise_for :users, controllers: {
@@ -8,6 +12,20 @@ Rails.application.routes.draw do
   # Resources
   resources :users
   resources :disables
+  resources :posts
+  resources :lsabouts
+  resources :errors
+  resources :announcements
+
+  # All resources with do and end
+
+  resources :posts do
+    resources :comments
+  end
+
+  resources :conversations, only: [:index, :create, :destroy] do
+    resources :messages, only: [:index, :create]
+  end
 
   # Admin Pages
   get :lionsocial, 'admins/lionsocial'
@@ -22,9 +40,9 @@ Rails.application.routes.draw do
 
   # Lion Social
   get :lionsocialdisable, 'lionsocial/disables'
-  get :posts, 'lionsocial/posts'
+  get :lionposts, 'lionsocial/posts'
   get :lionsocialannocments, 'lionsocial/annocments'
-  get 'lionsocial/commentsfollowing'
-  get 'lionsocial/messages'
+  get :comments, 'lionsocial/comments'
+  get :lionsocialabout, 'lionsocial/about'
 
 end

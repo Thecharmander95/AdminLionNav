@@ -1,0 +1,14 @@
+.grid-x
+  .medium-3.cell
+    = render "buttons/lionsocial"
+  .medium-9.cell
+    .center
+      %h2 Announcement Settings
+      %h4 Change or remove the current announcement. (To remove leave blank)
+    .callout.info
+      = form_for @announcement do |f|
+        %p
+          = f.label :Dispaly_message
+          = f.text_field :text
+        = f.submit class: "button"
+      = link_to "Back", lionsocial_path, class: "button"
