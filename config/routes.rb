@@ -20,4 +20,11 @@ Rails.application.routes.draw do
   get :usercontrol, 'controls/user'
   get :disablecontrol, 'controls/disable'
 
+  # Lion Social
+  get :lionsocialdisable, 'lionsocial/disables'
+  get :posts, 'lionsocial/posts'
+  get :lionsocialannocments, 'lionsocial/annocments'
+  get 'lionsocial/commentsfollowing'
+  get 'lionsocial/messages'
+
 end
