@@ -1,0 +1,4 @@
+- Announcement.all.each do |announce|
+  - if announce.site == "lionsocial"
+    .callout
+      %p= announce.text

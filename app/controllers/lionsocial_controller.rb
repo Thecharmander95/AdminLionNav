@@ -9,7 +9,7 @@ class LionsocialController < ApplicationController
   end
 
   def annocments
-    @announcement = Announcement.first
+    @announcement = Announcement.all
   end
 
   def comments

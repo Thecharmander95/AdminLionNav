@@ -1,14 +1,25 @@
 .grid-x
   .medium-3.cell
-    = render "buttons/lionsocial"
+    = render "buttons/cross"
   .medium-9.cell
     .center
-      %h2 Announcement Settings
-      %h4 Change or remove the current announcement. (To remove leave blank)
-    .callout.info
-      = form_for @announcement do |f|
-        %p
-          = f.label :Dispaly_message
-          = f.text_field :text
-        = f.submit class: "button"
-      = link_to "Back", lionsocial_path, class: "button"
+      %h2 All Announcements
+    %table
+      %thead
+        %tr
+          %th Id
+          %th Body
+          %th Site
+          %th Shown?
+          %th Update
+      %tbody
+        - @announcement.each do |anounce|
+          %tr
+            %td= anounce.id
+            %td= anounce.text
+            %td= anounce.site
+            %td= anounce.hidden
+            // %td= link_to 'Update Hidden', updateannouce_path(@update)
+            %td= link_to "Update Hidden", updateannouce_path(:updatecall => anounce.id )
+    = link_to "Back", lionsocial_path, class: "button"
+    = link_to "New", new_announcement_path, class: "button"
