@@ -22,16 +22,8 @@ class AnnouncementsController < ApplicationController
   # POST /announcements or /announcements.json
   def create
     @announcement = Announcement.new(announcement_params)
-
-    respond_to do |format|
-      if @announcement.save
-        format.html { redirect_to @announcement, notice: "Announcement was successfully created." }
-        format.json { render :show, status: :created, location: @announcement }
-      else
-        format.html { render :new, status: :unprocessable_entity }
-        format.json { render json: @announcement.errors, status: :unprocessable_entity }
-      end
-    end
+    @announcement.save
+    redirect_to annocments_path
   end
 
   # PATCH/PUT /announcements/1 or /announcements/1.json

@@ -20,6 +20,7 @@ class ControlsController < ApplicationController
 
   def annocments
     @announcement = Announcement.all
+    @site = ['fourms', 'social', "movie", "account", "money"]
   end
   
 end

@@ -21,4 +21,5 @@
             %td= anounce.hidden
             %td= link_to "Update Hidden", updateannouce_path(:updatecall => anounce.id )
     = link_to "Back", cross_path, class: "button"
-    = link_to "New", new_announcement_path, class: "button"
+    = link_to "New", new_announcement_path, data: { turbo_frame: "data_announcement_frame"}, class: "button"
+    = turbo_frame_tag "data_announcement_frame"
