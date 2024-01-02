@@ -38,6 +38,7 @@ Rails.application.routes.draw do
   get :usercontrol, 'controls/user'
   get :disablecontrol, 'controls/disable'
   get :updateannouce, 'controls/updateannouncement'
+  get :annocments, 'controls/annocments'
 
   # Lion Social
   get :lionsocialdisable, 'lionsocial/disables'

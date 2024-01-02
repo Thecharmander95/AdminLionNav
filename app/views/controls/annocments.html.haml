@@ -1,0 +1,24 @@
+.grid-x
+  .medium-3.cell
+    = render "buttons/cross"
+  .medium-9.cell
+    .center
+      %h2 All Announcements
+    %table
+      %thead
+        %tr
+          %th Id
+          %th Body
+          %th Site
+          %th Shown?
+          %th Update
+      %tbody
+        - @announcement.each do |anounce|
+          %tr
+            %td= anounce.id
+            %td= anounce.text
+            %td= anounce.site
+            %td= anounce.hidden
+            %td= link_to "Update Hidden", updateannouce_path(:updatecall => anounce.id )
+    = link_to "Back", cross_path, class: "button"
+    = link_to "New", new_announcement_path, class: "button"

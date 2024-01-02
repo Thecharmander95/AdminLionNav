@@ -17,5 +17,9 @@ class ControlsController < ApplicationController
     end
     redirect_to lionsocialannocments_path, notice: "Successfuly updated."
   end
+
+  def annocments
+    @announcement = Announcement.all
+  end
   
 end
