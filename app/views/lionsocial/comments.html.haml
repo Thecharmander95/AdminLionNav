@@ -16,11 +16,13 @@
 
       %tbody
         - @comments.each do |comment|
-          %tr
-            %td= comment.id
-            %td= comment.post.id
-            %td= comment.user.username
-            %td= comment.body
-            %td= link_to 'Delete', [comment.post, comment] ,data: { "turbo-method": :delete, turbo_confirm: 'Are you sure?' }
+          - if comment.post.id == ""
+          -else
+            %tr
+              %td= comment.id
+              %td= comment.post.id
+              %td= comment.user.username
+              %td= comment.body
+              %td= link_to 'Delete', [comment.post, comment] ,data: { "turbo-method": :delete, turbo_confirm: 'Are you sure?' }
 
     = link_to "Back", lionsocial_path, class: "button"
