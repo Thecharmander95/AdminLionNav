@@ -1,5 +1,6 @@
 class ForumsController < ApplicationController
   before_action :set_forum, only: %i[ show edit update destroy ]
+  before_action :check_admin
 
   def index
     @forums = Forum.all.by_newest

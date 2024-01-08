@@ -3,35 +3,24 @@
     = render "buttons/lionsocial"
   .medium-9.cell
     .center
-      %h2 Disable Settings
-      %h4 Control what features you can disable
-    = form_for @about do |f|
-      = f.label :Title
-      = f.text_field :title
-
-      = f.label :Top_paragrath
-      = f.text_area :toppara
-
-      = f.label :Version
-      =f.text_field :change
-
-      = f.label :list1
-      = f.text_field :list1
-
-      = f.label :list2
-      = f.text_field :list2
-
-      = f.label :list3
-      = f.text_field :list3
-
-      = f.label :Github_Name_For_link
-      = f.text_field :githubtitle
-
-      = f.label :Link_For_Github
-      = f.text_field :linkgithub
-
-      = f.label :bottom
-      = f.text_area :buttom
-
-      = f.submit class: "button"
+      %h2 About Pages
+      %h4 Add or hide about pages for Lion Social
+    %table
+      %thead
+        %tr
+          %th Id
+          %th Created
+          %th Shown?
+          %th Update
+      %tbody
+        - @about.each do |about|
+          - if about.site == "social"
+            %tr
+              %td= about.id
+              %td= about.created_at
+              %td= about.hidden
+              %td= link_to "Update Hidden", updateabout_path(:updatecall => about.id, :page => "lionsocialabout_path" )
+    
     = link_to "Back", lionsocial_path, class: "button"
+    = link_to "New", new_about_path, data: { turbo_frame: "data_about_frame"}, class: "button"
+    = turbo_frame_tag "data_about_frame"

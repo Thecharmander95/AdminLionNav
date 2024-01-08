@@ -1,0 +1,27 @@
+.grid-x
+  .medium-3.cell
+    = render "buttons/cross"
+  .medium-9.cell
+    .center
+      %h2 About Pages
+      %h4 Add or hide about pages across Lion Nav
+    %table
+      %thead
+        %tr
+          %th Id
+          %th Created
+          %th Site
+          %th Shown?
+          %th Update
+      %tbody
+        - @about.each do |about|
+          %tr
+            %td= about.id
+            %td= about.created_at
+            %td= about.site
+            %td= about.hidden
+            %td= link_to "Update Hidden", updateabout_path(:updatecall => about.id)
+    
+    = link_to "Back", cross_path, class: "button"
+    = link_to "New", new_about_path, data: { turbo_frame: "data_about_frame"}, class: "button"
+    = turbo_frame_tag "data_about_frame"

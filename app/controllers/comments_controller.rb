@@ -1,6 +1,7 @@
 class CommentsController < ApplicationController
   before_action :set_post
   before_action :authenticate_user!
+  before_action :check_admin
 
   def new
     @comment = @post.comments.new
@@ -18,11 +19,10 @@ class CommentsController < ApplicationController
   end
 
   def destroy
-    @post = Post.find(params[:post_id])
     @comment = Comment.find(params[:id])
     @comment.destroy
     respond_to do |format|
-      format.html { redirect_to @post }
+      format.html { redirect_to comments_path }
       format.js
     end
   end

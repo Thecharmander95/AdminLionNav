@@ -1,6 +1,7 @@
 class ActsController < ApplicationController
   before_action :set_movie
   before_action :set_act, only: [:edit, :update, :destroy]
+  before_action :check_admin
 
   def new
     @act = @movie.acts.new

@@ -1,15 +1,16 @@
-class LsaboutsController < ApplicationController
+class AboutsController < ApplicationController
   before_action :set_about, only: [:edit, :update, :destroy]
+  before_action :check_admin
 
   def new
-    @about = Lsabout.new
+    @about = About.new
   end
 
   def create
-    @about = Lsabout.new(about_params)
+    @about = About.new(about_params)
     if @about.save
       flash[:notice] = "About page was successfully created"
-      redirect_to lsabouts_path
+      redirect_to abouts_path
     else
       render 'new'
     end
@@ -21,31 +22,31 @@ class LsaboutsController < ApplicationController
   def update
     if @about.update(about_params)
      flash[:notice] = "About page was updated"
-     redirect_to lionsocialabout_path
+     redirect_to abouts_path
     else
      flash[:notice] = "About page was not updated"
-     redirect_to lionsocialabout_path
+     render 'edit'
     end
   end
 
   def index
     @page_title = "About Lion social"
-    @abouts = Lsabout.all
+    @abouts = About.all
   end
 
   def destroy
     @about.destroy
     flash[:notice] = "About page was deleted"
-    redirect_to lsabouts_path
+    redirect_to abouts_path
   end
 
   private
 
     def set_about
-      @about = Lsabout.find(params[:id])
+      @about = About.find(params[:id])
     end
 
     def about_params
-      params.require(:lsabout).permit(:title, :toppara, :change, :list1, :list2, :list3, :buttom, :linkgithub, :githubtitle)
+      params.require(:about).permit(:title, :toppara, :change, :list1, :list2, :list3, :buttom, :linkgithub, :githubtitle, :site, :hidden)
     end
 end

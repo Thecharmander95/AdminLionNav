@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_01_02_062853) do
+ActiveRecord::Schema[7.1].define(version: 2024_01_08_132028) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -27,6 +27,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_01_02_062853) do
     t.string "site"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.boolean "hidden"
   end
 
   create_table "active_storage_attachments", force: :cascade do |t|
@@ -72,6 +73,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_01_02_062853) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "video_id"
+    t.string "site"
     t.index ["post_id"], name: "index_comments_on_post_id"
     t.index ["user_id"], name: "index_comments_on_user_id"
     t.index ["video_id"], name: "index_comments_on_video_id"

@@ -1,6 +1,7 @@
 class PicturescenesController < ApplicationController
   before_action :set_movie, excpet: [:destroy]
   before_action :set_picturescene, only: [:show, :destroy]
+  before_action :check_admin
 
   def index
     @picturescenes = Picturescene.all

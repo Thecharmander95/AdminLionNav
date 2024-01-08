@@ -1,5 +1,6 @@
 class AnnouncementsController < ApplicationController
   before_action :set_announcement, only: %i[ show edit update destroy ]
+  before_action :check_admin
 
   # GET /announcements or /announcements.json
   def index

@@ -1,5 +1,7 @@
 class ConversationsController < ApplicationController
   before_action :authenticate_user!
+  before_action :check_admin
+
 
   def index
     @page_title = "Conversations Lion social"

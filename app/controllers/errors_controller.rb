@@ -1,6 +1,7 @@
 class ErrorsController < ApplicationController
   before_action :set_error, only: [:destroy]
   before_action :authenticate_user!
+  before_action :check_admin
 
   def new
     @error = Error.new

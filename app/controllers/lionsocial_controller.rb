@@ -1,5 +1,6 @@
 class LionsocialController < ApplicationController
-  
+  before_action :check_admin
+
   def disables
     @disable = Disable.first
   end
@@ -17,7 +18,7 @@ class LionsocialController < ApplicationController
   end
 
   def about
-    @about = Lsabout.first
+    @about = About.all
   end
 
 end

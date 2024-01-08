@@ -16,8 +16,7 @@
 
       %tbody
         - @comments.each do |comment|
-          - if comment.post.id == ""
-          -else
+          - if comment.site == "social"
             %tr
               %td= comment.id
               %td= comment.post.id

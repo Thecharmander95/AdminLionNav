@@ -1,6 +1,7 @@
 class ScenesController < ApplicationController
   before_action :set_movie
   before_action :set_scene, only: [:edit, :update, :destroy]
+  before_action :check_admin
 
   # GET /scenes
   # GET /scenes.json
