@@ -6,19 +6,19 @@ class LionsocialController < ApplicationController
   end
 
   def posts
-    @posts = Post.all
+    @posts = Post.by_newest
   end
 
   def annocments
-    @announcement = Announcement.all
+    @announcement = Announcement.by_newest
   end
 
   def comments
-    @comments = Comment.all
+    @comments = Comment.by_newest
   end
 
   def about
-    @about = About.all
+    @about = About.by_newest
   end
 
 end

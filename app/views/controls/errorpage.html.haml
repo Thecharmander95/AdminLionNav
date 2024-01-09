@@ -1,0 +1,27 @@
+.grid-x
+  .medium-3.cell
+    = render "buttons/cross"
+  .medium-9.cell
+    .center
+      %h2 Errors 
+      %h4 See all the errors across LionNav
+    %table
+      %thead
+        %tr
+          %th Id
+          %th Error
+          %th Discribtion
+          %th Site
+          %th Resolved?
+          %th Update
+      %tbody
+        - @error.each do |error|
+          %tr
+            %td= error.id
+            %td= error.error
+            %td= error.description
+            %td= error.site
+            %td= error.resolved
+            %td= link_to "Mark Resolved", resolved_path(:updatecall => error.id)
+    
+    = link_to "Back", cross_path, class: "button"

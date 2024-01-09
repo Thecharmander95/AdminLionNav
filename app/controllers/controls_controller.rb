@@ -1,13 +1,7 @@
 class ControlsController < ApplicationController
   before_action :check_admin
-  
-  def user
-    @users = User.all
-  end
 
-  def disable
-    @disable = Disable.first
-  end
+  # Functions
 
   def updateannouncement
     @update = Announcement.find(params[:updatecall])
@@ -21,7 +15,6 @@ class ControlsController < ApplicationController
   end
 
   def updateabout
-    @page = :page
     @update = About.find(params[:updatecall])
 
     if @update.hidden == true
@@ -32,12 +25,36 @@ class ControlsController < ApplicationController
     redirect_to aboutpages_path, notice: "Successfuly updated."
   end
 
+  def resolved
+    @update = Error.find(params[:updatecall])
+    if @update.resolved == true
+      @update.update_attribute(:resolved, false)
+    else
+      @update.update_attribute(:resolved, true)
+    end
+    redirect_to errorpage_path, notice: "Successfuly updated."
+  end
+
+  # Pages
+
+  def user
+    @users = User.by_newest
+  end
+
+  def disable
+    @disable = Disable.first
+  end
+
   def annocments
-    @announcement = Announcement.all
+    @announcement = Announcement.by_newest
   end
 
   def aboutpage
-    @about = About.all
+    @about = About.by_newest
+  end
+
+  def errorpage
+    @error = Error.by_newest
   end
   
 end

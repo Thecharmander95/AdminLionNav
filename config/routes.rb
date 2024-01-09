@@ -37,6 +37,8 @@ Rails.application.routes.draw do
   get :annocments, 'controls/annocments'
   get :updateabout, 'controls/updateabout'
   get :aboutpages, 'controls/aboutpage'
+  get :errorpage, 'controls/errorpage'
+  get :resolved, 'controls/resolved'
 
   # Lion Social
   get :lionsocialdisable, 'lionsocial/disables'
