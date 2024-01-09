@@ -5,3 +5,34 @@
     .center
       %h2 Movie Makers Settings
       %h4 Control Movie Makers from just right here.
+    .grid-x
+      .medium-4.cell 
+        .callout.info 
+          .center 
+            %h4 Movie Tally
+            %p Show the number of movies along with scenes.
+            = link_to "Open", movie_path, class: "button"
+      .medium-4.cell
+        .callout.info
+          .center
+            %h4 About
+            %p Shows all about pages for Movie Makers.
+            = link_to "Open", movieabout_path, class: "button"
+      .medium-4.cell
+        .callout.info
+          .center
+            %h4 Annoucements
+            %p Shows all annoucements for Movie Makers.
+            = link_to "Open", movieannouce_path, class: "button"
+      .medium-4.cell
+        .callout.info
+          .center
+            %h4 Errors
+            %p Shows all errors reported for Movie Makers.
+            = link_to "Open", movieerror_path, class: "button"
+      .medium-4.cell
+        .callout.info
+          .center
+            %h4 Disable
+            %p Shows all disable options for Movie Makers.
+            = link_to "Open", finaceabout_path, class: "button"

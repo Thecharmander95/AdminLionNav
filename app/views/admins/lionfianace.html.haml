@@ -5,3 +5,28 @@
     .center
       %h2 Lion Fianace Settings
       %h4 Control Lion Fianace from just right here.
+    .grid-x
+      .medium-4.cell
+        .callout.info
+          .center
+            %h4 Disable
+            %p Shows all disbale options for Lion Fianace.
+            = link_to "Open", fianacedisable_path, class: "button"
+      .medium-4.cell
+        .callout.info
+          .center
+            %h4 Annoucements
+            %p Shows all annoucements for Lion Fianace.
+            = link_to "Open", fianaceannoucment_path, class: "button"
+      .medium-4.cell
+        .callout.info
+          .center
+            %h4 Errors
+            %p Shows all errors reported for Lion Fianace.
+            = link_to "Open", finacerror_path, class: "button"
+      .medium-4.cell
+        .callout.info
+          .center
+            %h4 About
+            %p Shows all about pages for Lion Fianace.
+            = link_to "Open", finaceabout_path, class: "button"

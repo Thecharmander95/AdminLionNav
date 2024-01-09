@@ -47,4 +47,27 @@ Rails.application.routes.draw do
   get :comments, 'lionsocial/comments'
   get :lionsocialabout, 'lionsocial/about'
 
+  # Lion Fiance
+  get :fianacedisable, 'lionfiance/disables'
+  get :fianaceannoucment, 'lionfiance/annoucments'
+  get :finaceabout, 'lionfiance/about'
+  get :finacerror, 'lionfiance/errors'
+
+  # Rails Fourms
+  get :fourms, 'railsfourms/forums'
+  get :fourmcomments, 'railsfourms/comments'
+  get :fourmerrors, 'railsfourms/errors'
+  get :fourmannouce, 'railsfourms/annoucments'
+  get :fourmdisable, 'railsfourms/disables'
+  get :fourmabout, 'railsfourms/about'
+  get :videos, 'railsfourms/videos'
+  get :guides, 'railsfourms/guides'
+
+  # Movie Makers
+  get :movieabout,'moviemakers/about'
+  get :movieannouce,'moviemakers/annoucments'
+  get :moviedisable,'moviemakers/disable'
+  get :movieerror,'moviemakers/errors'
+  get :movie, 'moviemakers/movietally'
+
 end
