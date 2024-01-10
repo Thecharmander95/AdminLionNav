@@ -13,7 +13,7 @@
           %th Update
       %tbody
         - @announcement.each do |anounce|
-          - if announce.site == "money"
+          - if anounce.site == "money"
             %tr
               %td= anounce.id
               %td= anounce.text
