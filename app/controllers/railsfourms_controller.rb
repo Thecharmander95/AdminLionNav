@@ -1,6 +1,6 @@
 class RailsfourmsController < ApplicationController
   def forums
-    @forum = Form.by_newest
+    @forum = Forum.by_newest
   end
 
   def comments

@@ -1,3 +1,31 @@
 .grid-x
   .medium-3.cell
     = render "buttons/railstutorials"
+  .medium-9.cell
+    .center
+      %h2 Videos 
+      %h4 Add videos to Rails Fourms
+    %table
+      %thead
+        %tr
+          %th Id
+          %th Title
+          %th Link (if attached)
+          %th Video (is uploaded?)
+          %th Remove
+
+      %tbody
+        - @video.each do |video|
+          %tr
+            %td= video.id
+            %td= video.title
+            %td= video.link
+            - if video.uploaded.video?
+              %td Self Uploaded
+            - else
+              %td Not provied
+            %td= link_to 'Delete', deletevideo_path(:deletecall => video.id)
+   
+    = link_to "Back", rortutorials_path, class: "button"
+    = link_to "New", new_video_path ,data: { turbo_frame: "data_video_frame"}, class: "button"
+    = turbo_frame_tag "data_video_frame"

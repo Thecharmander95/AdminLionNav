@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   resources :abouts
   resources :errors
   resources :announcements
+  resources :videos
 
   # All resources with do and end
 
@@ -43,6 +44,9 @@ Rails.application.routes.draw do
   get :aboutpages, 'controls/aboutpage'
   get :errorpage, 'controls/errorpage'
   get :resolved, 'controls/resolved'
+  get :deleteforum, 'controls/deleteforum'
+  get :deletecomment, 'controls/deletecomment'
+  get :deletevideo, 'controls/deletevideo'
 
   # Lion Social
   get :lionsocialdisable, 'lionsocial/disables'
@@ -64,7 +68,7 @@ Rails.application.routes.draw do
   get :fourmannouce, 'railsfourms/annoucments'
   get :fourmdisable, 'railsfourms/disables'
   get :fourmabout, 'railsfourms/about'
-  get :videos, 'railsfourms/videos'
+  get :rvideos, 'railsfourms/videos'
   get :guides, 'railsfourms/guides'
 
   # Movie Makers

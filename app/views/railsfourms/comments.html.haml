@@ -22,6 +22,6 @@
               %td= comment.video.id
               %td= comment.user.username
               %td= comment.body
-              %td= link_to 'Delete', [comment.video, comment] ,data: { "turbo-method": :delete, turbo_confirm: 'Are you sure?' }
+              %td= link_to 'Delete', deletecomment_path(:deletecall => comment.id )
 
     = link_to "Back", rortutorials_path, class: "button"

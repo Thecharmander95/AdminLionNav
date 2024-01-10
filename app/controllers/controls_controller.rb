@@ -35,6 +35,24 @@ class ControlsController < ApplicationController
     redirect_to errorpage_path, notice: "Successfuly updated."
   end
 
+  def deleteforum
+    @object = Forum.find(params[:deletecall])
+    @object.delete
+    redirect_to fourms_path, notice: "Successfuly deleted."
+  end
+
+  def deletecomment
+    @object = Comment.find(params[:deletecall])
+    @object.delete
+    redirect_to fourmcomments_path, notice: "Successfuly deleted."
+  end
+
+  def deletevideo
+    @object = Video.find(params[:deletecall])
+    @object.delete
+    redirect_to rvideos_path, notice: "Successfuly deleted."
+  end
+
   # Pages
 
   def user

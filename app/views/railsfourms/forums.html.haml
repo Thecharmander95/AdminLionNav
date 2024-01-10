@@ -1,3 +1,26 @@
 .grid-x
   .medium-3.cell
     = render "buttons/railstutorials"
+  .medium-9.cell
+    .center
+      %h2 Fourms Check
+      %h4 See what fourms are appropriate and remove ones that are innapropiate
+    %table
+      %thead
+        %tr
+          %th Id
+          %th User
+          %th Question
+          %th Answer count
+          %th Solved?
+          %th Remove
+
+      %tbody
+        - @forum.each do |forum|
+          %tr
+            %td= forum.id
+            %td= forum.user.username
+            %td= forum.question
+            %td Number count
+            %td Solved check
+            %td= link_to 'Delete', deleteforum_path(:deletecall => forum.id)
