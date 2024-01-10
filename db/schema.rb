@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_01_09_232538) do
+ActiveRecord::Schema[7.1].define(version: 2024_01_10_025756) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -96,26 +96,26 @@ ActiveRecord::Schema[7.1].define(version: 2024_01_09_232538) do
   end
 
   create_table "disables", force: :cascade do |t|
-    t.string "postdisable"
-    t.string "conversationdisable"
-    t.string "homedisable"
-    t.string "userdisable"
-    t.string "movie"
-    t.string "scene"
-    t.string "credit"
-    t.string "error"
-    t.string "expense"
-    t.string "forums"
-    t.string "lsabout"
-    t.string "payment"
-    t.string "picturescene"
-    t.string "lionsocial"
-    t.string "lionfianace"
-    t.string "moviemaker"
-    t.string "tutorial"
-    t.string "myaccont"
-    t.string "chatrooms"
-    t.string "video"
+    t.boolean "postdisable"
+    t.boolean "conversationdisable"
+    t.boolean "homedisable"
+    t.boolean "userdisable"
+    t.boolean "movie"
+    t.boolean "scene"
+    t.boolean "credit"
+    t.boolean "error"
+    t.boolean "expense"
+    t.boolean "forums"
+    t.boolean "about"
+    t.boolean "payment"
+    t.boolean "picturescene"
+    t.boolean "lionsocial"
+    t.boolean "lionfianace"
+    t.boolean "moviemaker"
+    t.boolean "tutorial"
+    t.boolean "myaccont"
+    t.boolean "chatrooms"
+    t.boolean "video"
   end
 
   create_table "errors", force: :cascade do |t|

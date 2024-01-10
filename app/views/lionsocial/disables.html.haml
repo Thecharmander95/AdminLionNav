@@ -10,19 +10,19 @@
         .medium-3.cell.space
           %p
             = f.label :Disable_Posts
-            = f.text_field :postdisable
+            = f.select :postdisable, [['No', false], ['Yes', true]]
         .medium-3.cell.space
           %p
             = f.label :Disable_conversations
-            = f.text_field :conversationdisable
+            = f.select :conversationdisable, [['No', false], ['Yes', true]]
         .medium-3.cell.space
           %p
             = f.label :Disable_Abouts
-            = f.text_field :lsabout
+            = f.select :lsabout, [['No', false], ['Yes', true]]
         .medium-3.cell.space
           %p
             = f.label :Disable_Lion_Social
-            = f.text_field :lionsocial
+            = f.select :lionsocial, [['No', false], ['Yes', true]]
 
       = f.submit "Update Disables", class: "button"
     = link_to "Back", lionsocial_path, class: "button"

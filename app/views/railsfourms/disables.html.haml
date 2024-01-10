@@ -10,15 +10,15 @@
         .medium-3.cell.space
           %p
             = f.label :Disable_forums
-            = f.text_field :forums
+            = f.select :forums, [['No', false], ['Yes', true]]
         .medium-3.cell.space 
           %p 
             = f.label :Disable_videos
-            = f.text_field :video
+            = f.select :video, [['No', false], ['Yes', true]]
         .medium-3.cell.space
           %p
             = f.label :Disable_Rails_Tutorial
-            = f.text_field :tutorial
+            = f.select :tutorial, [['No', false], ['Yes', true]]
 
       = f.submit class: "button"
     = link_to "Back", rortutorials_path, class: "button"

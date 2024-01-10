@@ -10,22 +10,22 @@
         .medium-3.cell.space
           %p
             = f.label :Disable_Movies
-            = f.text_field :movie
+            = f.select :movie, [['No', false], ['Yes', true]]
         .medium-3.cell.space
           %p
             = f.label :Disable_scenes
-            = f.text_field :scene
+            = f.select :scene, [['No', false], ['Yes', true]]
         .medium-3.cell.space
           %p
             = f.label :Disable_credits
-            = f.text_field :credit
+            = f.select :credit, [['No', false], ['Yes', true]]
         .medium-3.cell.space
           %p
             = f.label :Disable_picturescenes
-            = f.text_field :picturescene
+            = f.select :picturescene, [['No', false], ['Yes', true]]
         .medium-3.cell.space
           %p
             = f.label :Disable_Movie_Makers
-            = f.text_field :moviemaker
+            = f.select :moviemaker, [['No', false], ['Yes', true]]
       = f.submit class: "button"
     = link_to "Back", moviemakers_path, class: "button"

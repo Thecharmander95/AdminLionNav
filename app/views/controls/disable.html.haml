@@ -10,74 +10,82 @@
         .medium-3.cell.space
           %p
             = f.label :Disable_LionNav
-            = f.text_field :homedisable
+            = f.select :homedisable, [['No', false], ['Yes', true]]
         .medium-3.cell.space
           %p
             = f.label :Disable_Posts
-            = f.text_field :postdisable
+            = f.select :postdisable, [['No', false], ['Yes', true]]
         .medium-3.cell.space
           %p
             = f.label :Disable_conversations
-            = f.text_field :conversationdisable
+            = f.select :conversationdisable, [['No', false], ['Yes', true]]
         .medium-3.cell.space
           %p
             = f.label :Disable_users
-            = f.text_field :userdisable
+            = f.select :userdisable, [['No', false], ['Yes', true]]
         .medium-3.cell.space
           %p
             = f.label :Disable_Movies
-            = f.text_field :movie
+            = f.select :movie, [['No', false], ['Yes', true]]
         .medium-3.cell.space
           %p
             = f.label :Disable_scenes
-            = f.text_field :scene
+            = f.select :scene, [['No', false], ['Yes', true]]
         .medium-3.cell.space
           %p
             = f.label :Disable_credits
-            = f.text_field :credit
+            = f.select :credit, [['No', false], ['Yes', true]]
         .medium-3.cell.space
           %p
             = f.label :Disable_errors
-            = f.text_field :error
+            = f.select :error, [['No', false], ['Yes', true]]
         .medium-3.cell.space
           %p
             = f.label :Disable_expenses
-            = f.text_field :expense
+            = f.select :expense, [['No', false], ['Yes', true]]
         .medium-3.cell.space
           %p
             = f.label :Disable_forums
-            = f.text_field :forums
+            = f.select :forums, [['No', false], ['Yes', true]]
         .medium-3.cell.space
           %p
-            = f.label :Disable_LionSocial_Abouts
-            = f.text_field :lsabout
+            = f.label :Disable_About
+            = f.select :about, [['No', false], ['Yes', true]]
         .medium-3.cell.space
           %p
             = f.label :Disable_payments
-            = f.text_field :payment
+            = f.select :payment, [['No', false], ['Yes', true]]
         .medium-3.cell.space
           %p
             = f.label :Disable_picturescenes
-            = f.text_field :picturescene
+            = f.select :picturescene, [['No', false], ['Yes', true]]
+        .medium-3.cell.space
+          %p
+            = f.label :Disable_video
+            = f.select :video, [['No', false], ['Yes', true]]
+        .medium-3.cell.space 
+          %p 
+            = f.label :Disable_chatrooms
+            = f.select :chatrooms, [['No', false], ['Yes', true]]
         .medium-3.cell.space
           %p
             = f.label :Disable_Lion_Social
-            = f.text_field :lionsocial
+            = f.select :lionsocial, [['No', false], ['Yes', true]]
         .medium-3.cell.space
           %p
             = f.label :Disable_Lion_Fianace
-            = f.text_field :lionfianace
+            = f.select :lionfianace, [['No', false], ['Yes', true]]
         .medium-3.cell.space
           %p
             = f.label :Disable_Movie_Makers
-            = f.text_field :moviemaker
+            = f.select :moviemaker, [['No', false], ['Yes', true]]
         .medium-3.cell.space
           %p
             = f.label :Disable_Rails_Tutorial
-            = f.text_field :tutorial
+            = f.select :tutorial, [['No', false], ['Yes', true]]
         .medium-3.cell.space
           %p
             = f.label :Disable_My_Accont
-            = f.text_field :myaccont
+            = f.select :myaccont, [['No', false], ['Yes', true]]
       = f.submit class: "button"
       = link_to "Back", cross_path, class: "button"
