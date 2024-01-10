@@ -23,6 +23,10 @@ Rails.application.routes.draw do
     resources :messages, only: [:index, :create]
   end
 
+  resources :videos do 
+    resources :comments
+  end
+
   # Admin Pages
   get :lionsocial, 'admins/lionsocial'
   get :cross, 'admins/lionnav'

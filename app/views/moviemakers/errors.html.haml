@@ -1,2 +1,26 @@
-%h1 Moviemakers#errors
-%p Find me in app/views/moviemakers/errors.html.haml
+.grid-x
+  .medium-3.cell
+    = render "buttons/moviemakers"
+  .medium-9.cell
+    .center
+      %h2 Errors 
+      %h4 See errors that are related to Movie Makers
+    %table
+      %thead
+        %tr
+          %th Id
+          %th Error
+          %th Discribtion
+          %th Resolved?
+          %th Update
+      %tbody
+        - @error.each do |error|
+          - if error.site == "movie"
+            %tr
+              %td= error.id
+              %td= error.error
+              %td= error.description
+              %td= error.resolved
+              %td= link_to "Mark Resolved", resolved_path(:updatecall => error.id)
+    
+    = link_to "Back", moviemakers_path, class: "button"

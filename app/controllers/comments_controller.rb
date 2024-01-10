@@ -26,6 +26,7 @@ class CommentsController < ApplicationController
       format.js
     end
   end
+  
   private
 
     def comment_params

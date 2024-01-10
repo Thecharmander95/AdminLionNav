@@ -1,2 +1,24 @@
-%h1 Lionfiance#disables
-%p Find me in app/views/lionfiance/disables.html.haml
+.grid-x
+  .medium-3.cell
+    = render "buttons/lionfianace"
+  .medium-9.cell
+    .center
+      %h2 Disable Settings
+      %h4 Control what features you can disable
+    = form_for @disable do |f|
+      .grid-x
+        .medium-3.cell.space
+          %p
+            = f.label :Disable_expenses
+            = f.text_field :expense
+        .medium-3.cell.space
+          %p
+            = f.label :Disable_payments
+            = f.text_field :payment
+        .medium-3.cell.space
+          %p
+            = f.label :Disable_Lion_Fianace
+            = f.text_field :lionfianace
+
+      = f.submit class: "button"
+    = link_to "Back", lionfianace_path, class: "button"

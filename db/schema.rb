@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_01_08_220145) do
+ActiveRecord::Schema[7.1].define(version: 2024_01_09_232538) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -115,6 +115,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_01_08_220145) do
     t.string "tutorial"
     t.string "myaccont"
     t.string "chatrooms"
+    t.string "video"
   end
 
   create_table "errors", force: :cascade do |t|

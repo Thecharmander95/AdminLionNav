@@ -1,2 +1,24 @@
-%h1 Moviemakers#annoucments
-%p Find me in app/views/moviemakers/annoucments.html.haml
+.grid-x
+  .medium-3.cell
+    = render "buttons/moviemakers"
+  .medium-9.cell
+    .center
+      %h2 All Announcements
+    %table
+      %thead
+        %tr
+          %th Id
+          %th Body
+          %th Shown?
+          %th Update
+      %tbody
+        - @announcement.each do |anounce|
+          - if announce.site == "movie"
+            %tr
+              %td= anounce.id
+              %td= anounce.text
+              %td= anounce.hidden
+            %td= link_to "Update Hidden", updateannouce_path(:updatecall => anounce.id)
+    = link_to "Back", moviemakers_path, class: "button"
+    = link_to "New", new_announcement_path, data: { turbo_frame: "data_announcement_frame"}, class: "button"
+    = turbo_frame_tag "data_announcement_frame"

@@ -1,2 +1,27 @@
-%h1 Railsfourms#comments
-%p Find me in app/views/railsfourms/comments.html.haml
+.grid-x
+  .medium-3.cell
+    = render "buttons/railstutorials"
+  .medium-9.cell
+    .center
+      %h2 Comment Settings
+      %h4 See what comments are appropriate and remove ones that are innapropiate
+    %table
+      %thead
+        %tr
+          %th Id
+          %th Post ID
+          %th Who Commented?
+          %th Text
+          %th Remove
+
+      %tbody
+        - @comment.each do |comment|
+          - if comment.site == "fourms"
+            %tr
+              %td= comment.id
+              %td= comment.video.id
+              %td= comment.user.username
+              %td= comment.body
+              %td= link_to 'Delete', [comment.video, comment] ,data: { "turbo-method": :delete, turbo_confirm: 'Are you sure?' }
+
+    = link_to "Back", rortutorials_path, class: "button"

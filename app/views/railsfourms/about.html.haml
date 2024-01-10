@@ -1,2 +1,26 @@
-%h1 Railsfourms#about
-%p Find me in app/views/railsfourms/about.html.haml
+.grid-x
+  .medium-3.cell
+    = render "buttons/railstutorials"
+  .medium-9.cell
+    .center
+      %h2 About Pages
+      %h4 Add or hide about pages for Rails Fourms
+    %table
+      %thead
+        %tr
+          %th Id
+          %th Created
+          %th Shown?
+          %th Update
+      %tbody
+        - @about.each do |about|
+          - if about.site == "fourms"
+            %tr
+              %td= about.id
+              %td= about.created_at
+              %td= about.hidden
+              %td= link_to "Update Hidden", updateabout_path(:updatecall => about.id, :page => "lionsocialabout_path" )
+    
+    = link_to "Back", rortutorials_path, class: "button"
+    = link_to "New", new_about_path, data: { turbo_frame: "data_about_frame"}, class: "button"
+    = turbo_frame_tag "data_about_frame"

@@ -1,2 +1,31 @@
-%h1 Moviemakers#disable
-%p Find me in app/views/moviemakers/disable.html.haml
+.grid-x
+  .medium-3.cell
+    = render "buttons/moviemakers"
+  .medium-9.cell
+    .center
+      %h2 Disable Settings
+      %h4 Control what features you can disable
+    = form_for @disable do |f|
+      .grid-x
+        .medium-3.cell.space
+          %p
+            = f.label :Disable_Movies
+            = f.text_field :movie
+        .medium-3.cell.space
+          %p
+            = f.label :Disable_scenes
+            = f.text_field :scene
+        .medium-3.cell.space
+          %p
+            = f.label :Disable_credits
+            = f.text_field :credit
+        .medium-3.cell.space
+          %p
+            = f.label :Disable_picturescenes
+            = f.text_field :picturescene
+        .medium-3.cell.space
+          %p
+            = f.label :Disable_Movie_Makers
+            = f.text_field :moviemaker
+      = f.submit class: "button"
+    = link_to "Back", moviemakers_path, class: "button"

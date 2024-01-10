@@ -1,10 +1,10 @@
 .grid-x
   .medium-3.cell
-    = render "buttons/lionfianace"
+    = render "buttons/lionsocial"
   .medium-9.cell
     .center
       %h2 Errors 
-      %h4 See errors that are related to Lion Fianace
+      %h4 See errors that are related to Lion Social
     %table
       %thead
         %tr
@@ -15,7 +15,7 @@
           %th Update
       %tbody
         - @error.each do |error|
-          - if error.site == "money"
+          - if error.site == "social"
             %tr
               %td= error.id
               %td= error.error
@@ -23,4 +23,4 @@
               %td= error.resolved
               %td= link_to "Mark Resolved", resolved_path(:updatecall => error.id)
     
-    = link_to "Back", lionfianace_path, class: "button"
+    = link_to "Back", lionsocial_path, class: "button"

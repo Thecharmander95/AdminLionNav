@@ -1,2 +1,25 @@
-%h1 Moviemakers#movietally
-%p Find me in app/views/moviemakers/movietally.html.haml
+.grid-x
+  .medium-3.cell
+    = render "buttons/moviemakers"
+  .medium-9.cell
+    .center
+      %h2 Movie Tallys 
+      %h4 See how many movies 
+    %table
+      %thead
+        %tr
+          %th Id
+          %th Author
+          %th Scene Count
+          %th Picture Scene Count
+          %th Credits count
+      %tbody
+        - @movie.each do |movie|
+          %tr
+            %td= movie.id
+            %td= movie.author
+            %td= movie.scenes.count
+            %td= movie.picturescenes.count
+            %td= movie.credits.count
+    
+    = link_to "Back", moviemakers_path, class: "button"

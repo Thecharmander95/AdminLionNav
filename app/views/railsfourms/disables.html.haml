@@ -1,2 +1,24 @@
-%h1 Railsfourms#disables
-%p Find me in app/views/railsfourms/disables.html.haml
+.grid-x
+  .medium-3.cell
+    = render "buttons/railstutorials"
+  .medium-9.cell
+    .center
+      %h2 Disable Settings
+      %h4 Control what features you can disable
+    = form_for @disable do |f|
+      .grid-x
+        .medium-3.cell.space
+          %p
+            = f.label :Disable_forums
+            = f.text_field :forums
+        .medium-3.cell.space 
+          %p 
+            = f.label :Disable_videos
+            = f.text_field :video
+        .medium-3.cell.space
+          %p
+            = f.label :Disable_Rails_Tutorial
+            = f.text_field :tutorial
+
+      = f.submit class: "button"
+    = link_to "Back", rortutorial_path, class: "button"
